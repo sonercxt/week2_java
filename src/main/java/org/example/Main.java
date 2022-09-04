@@ -11,9 +11,9 @@ public class Main {
         Manager manager2 = new Manager(2, "Mark", "Rylie", 51, 10200, "Development");
         Manager manager3 = new Manager(3, "Maria", "Swift", 42, 10500, "HR");
 
-        SoftwareDeveloper softwareDeveloper1 = new SoftwareDeveloper(1, "Alex", "Davies", 27, 6000, "Test", manager1, "Selenium", 7);
-        SoftwareDeveloper softwareDeveloper2 = new SoftwareDeveloper(2, "Oliver", "Wilson", 32, 6250, "Development", manager2, "Selenium", 7);
-        SoftwareDeveloper newSoftwareDeveloper = new SoftwareDeveloper(3, "Charlie", "Evans", 38, 6600, "Development", manager2, "Selenium", 7);
+        SoftwareDeveloper softwareDeveloper1 = new SoftwareDeveloper(1, "Alex", "Davies", 27, 6000, "Test", "manager1", "Selenium", 7);
+        SoftwareDeveloper softwareDeveloper2 = new SoftwareDeveloper(2, "Oliver", "Wilson", 32, 6250, "Development", "manager2", "Selenium", 7);
+        SoftwareDeveloper newSoftwareDeveloper = new SoftwareDeveloper(3, "Charlie", "Evans", 38, 6600, "Development", "manager2", "Selenium", 7);
 
         Employee newEmployee = new Employee(3, "Max", "Adams", 34, 6000, "Unknown");
         Employee newEmployee2 = new Employee(3, "Mario", "Trix", 30, 6000, "Unknown");
@@ -51,9 +51,6 @@ public class Main {
         manager3.hireEmployee(newEmployee2);
         manager3.getNumberOfEmployeesSupervised();
         manager3.getEmployees();
-
-
-
 
     }
 }
