@@ -43,16 +43,16 @@ public class SoftwareDeveloper extends Employee implements ISoftwareDeveloper{
 
     @Override
     public void writeCode() {
-
+        System.out.println("Code has been written by: "+this.getFirstName()+" "+this.getLastName());
     }
 
     @Override
     public void testCode() {
-
+        System.out.println("Code has been tested by: "+this.getFirstName()+" "+this.getLastName());
     }
 
     @Override
     public void pushChanges() {
-
+        System.out.println("Code has been pushed by: "+this.getFirstName()+" "+this.getLastName());
     }
 }

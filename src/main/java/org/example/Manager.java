@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.LinkedList;
+
 public class Manager extends Employee implements IManager{
 
     // A Manager has numberOfEmployeesSupervised attribute additionally.
@@ -10,21 +12,27 @@ public class Manager extends Employee implements IManager{
     private int numberOfEmployeesSupervised;
     public Manager(int pId, String pFirstName, String pLastName, int pAge, double pSalary, String pDepartment) {
         super(pId, pFirstName, pLastName, pAge, pSalary, pDepartment);
-        this.numberOfEmployeesSupervised = numberOfEmployeesSupervised;
+        this.numberOfEmployeesSupervised = 0;
     }
 
+    LinkedList <Employee> employeeList = new LinkedList<Employee>();
     @Override
     public void increaseSalary(Employee emp, double amount) {
-        System.out.println(emp.getFirstName() + " increaseSalary" + amount);
+        emp.setSalary(amount);
+        System.out.println(emp.getFirstName() + " " + emp.getLastName() + " increaseSalary" + amount);
     }
 
     @Override
     public void hireEmployee(Employee emp) {
+        employeeList.add(emp);
+        setNumberOfEmployeesSupervised(employeeList.size());
         System.out.println(emp.getFirstName() + " " + emp.getLastName() + "is hired");
     }
 
     @Override
     public void fireEmployee(Employee emp) {
+        employeeList.remove(emp);
+        setNumberOfEmployeesSupervised(employeeList.size());
         System.out.println(emp.getFirstName() + " " + emp.getLastName() + " is fired" );
     }
 
@@ -39,6 +47,6 @@ public class Manager extends Employee implements IManager{
     }
 
     public void getEmployees() {
-        System.out.println("Emloyees" + this.getFirstName() + this.getLastName());
+        System.out.println("Employees" + this.getFirstName() + this.getLastName());
     }
 }

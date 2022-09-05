@@ -26,7 +26,7 @@ public class Employee implements IEmployee{
 
     @Override
     public void takeABreak() {
-
+        System.out.println(this.firstName+" took a break");
     }
 
     public int getId() {
